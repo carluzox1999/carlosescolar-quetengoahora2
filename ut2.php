@@ -104,8 +104,7 @@
                 )        
             )
         );
-
-        
+    
         function mostrarHorario(){
             global $horario;
             foreach($horario as $dia => $programa){
