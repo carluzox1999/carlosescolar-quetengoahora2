@@ -8,128 +8,154 @@
 </head>
 <body>
     <?php
+
+        // $horario = array(
+        //     "Tiempo" => array("08:00-08-55", "08:55-09:50", "09:50-10:45", "10:45-11:15", "11:15-12:10", "12:10-13:05", "13:05-14:00"),
+        //     "Materia" => array("EMR", "DSW", "DEW", "DPL", "DOR"),
+        //     "Docente" => array("Maria del Sol Garcia Tarajano", "Sergio Ramos Suarez", "Maria del carmen Rodriguez Suarez", "Maria Antonia Montesdeoca Viera", "Ermis Papakonstatinou Baez"),
+        //     "Aula" => array("201")
+        // );
         $horario = array(
-            "Lunes" => $materia = array(
-                "EMR" => array(
-                "Docente" => "Maria del Sol Garcia Naranjo", 
-                    "Aula" => "201",
-                    "Orden" => "08:00 - '08:55"
+            "Lunes" => array(
+                "08:00-08-55" => array(
+                    "Docente" => "Maria del Sol Garcia Naranjo", 
+                    "Materia" => "EMR",
+                    "Aula" => "201"
                 ),
-                "DSW" => array(
-                    "Docente" => "Sergio Ramos Suarez", 
-                    "Aula" => "201",
-                    "Orden" => "08:55 - '10:45"
+                "08:55-10:45" => array(
+                    "Docente" => "Sergio Ramos Suarez",
+                    "Materia" => "DSW", 
+                    "Aula" => "201"
                 ),
-                "DEW" => array(
+                "11:15-14:00" => array(
                     "Docente" => "Maria del Carmen Rodriguez Suarez", 
-                    "Aula" => "201",
-                    "Orden" => "11:15 - '14:00"
+                    "Materia" => "DEW", 
+                    "Aula" => "201"
                 )              
             ),
 
-            "Martes" => $materia = array(
-                "DPL" => array(
+            "Martes" =>  array(
+                "08:00-09:50" => array(
                     "Docente" => "Maria Antonia Montesdeoca Viera", 
-                    "Aula" => "201",
-                    "Orden" => "08:00 - '09:50"
+                    "Materia" => "DEW",
+                    "Aula" => "201"
                 ),
-                "DSW" => array(
+                "09:50-12:10" => array(
                     "Docente" => "Sergio Ramos Suarez", 
-                    "Aula" => "201",
-                    "Orden" => "09:50 - '12:10"
+                    "Materia" => "DSW",
+                    "Aula" => "201"
                 ),
-                "DOR" => array(
+                "12:10-14:00" => array(
                     "Docente" => "Ermis Papakonstantinou Baez", 
-                    "Aula" => "201",
-                    "Orden" => "12:10 - '14:00"
+                    "Materia" => "DOR",
+                    "Aula" => "201"
                 )             
             ),
 
-            "Miercoles" => $materia = array(
-                "DEW" => array(
-                    "Docente" => "Maria del Carmen Rodriguez Suarez", 
-                    "Aula" => "201",
-                    "Orden" => "08:00 - '09:50"
+            "Miercoles" =>  array(
+                "08:00-09:50" => array(
+                    "Docente" => "Maria del Carmen Rodriguez Suarez",
+                    "Materia" => "DEW", 
+                    "Aula" => "201"
                 ),
-                "DSW" => array(
+                "09:50-12:10" => array(
                     "Docente" => "Sergio Ramos Suarez", 
-                    "Aula" => "201",
-                    "Orden" => "09:50 - '12:10"
+                    "Materia" => "DSW",
+                    "Aula" => "201"
                 ),
-                "DOR" => array(
+                "12:10-14:00" => array(
                     "Docente" => "Ermis Papakonstantinou Baez", 
-                    "Aula" => "201",
-                    "Orden" => "12:10 - '14:00"
+                    "Materia" => "DOR",
+                    "Aula" => "201"
                 )          
             ),
 
-            "Jueves" => $materia = array(
-                "DPL" => array(
+            "Jueves" =>  array(
+                "08:00-10:45" => array(
                     "Docente" => "Maria Antonia Montesdeoca Viera", 
-                    "Aula" => "201",
-                    "Orden" => "08:00 - '10:45"
+                    "Materia" => "DPL",
+                    "Aula" => "201"
                 ),
-                "DEW" => array(
+                "11:15-13:05" => array(
                     "Docente" => "Maria del Carmen Rodriguez Suarez", 
-                    "Aula" => "201",
-                    "Orden" => "11:15 - '13:05"
+                    "Materia" => "DEW",
+                    "Aula" => "201"
                 ),
-                "EMR" => array(
+                "13:05-14:00" => array(
                     "Docente" => "Maria del Sol Garcia Tarajano", 
-                    "Aula" => "201",
-                    "Orden" => "13:05 - '14:00"
+                    "Materia" => "EMR",
+                    "Aula" => "201"
                 ) 
             ),
 
-            "Viernes" => $materia = array(
-                "DOR" => array(
+            "Viernes" =>  array(
+                "08:00-09:50" => array(
                     "Docente" => "Maria Antonia Montesdeoca Viera", 
-                    "Aula" => "201",
-                    "Orden" => "08:00 - '09:50"
+                    "Materia" => "DOR",
+                    "Aula" => "201"
                 ),
-                "DPL" => array(
-                    "Docente" => "Maria del Carmen Rodriguez Suarez", 
-                    "Aula" => "201",
-                    "Orden" => "09:50 - '10:45"
+                "09:50-10:45" => array(
+                    "Docente" => "Maria del Carmen Rodriguez Suarez",
+                    "Materia" => "DPL", 
+                    "Aula" => "201"
                 ),
-                "EMR" => array(
+                "11:15-12:10" => array(
                     "Docente" => "Maria del Sol Garcia Tarajano", 
-                    "Aula" => "201",
-                    "Orden" => "11:15 - '12:10"
+                    "Materia" => "EMR", 
+                    "Aula" => "201"
                 ),
-                "DSW" => array(
+                "12:10-14:00" => array(
                     "Docente" => "Sergio Ramos Suarez", 
-                    "Aula" => "201",
-                    "Orden" => "12:10 - '14:00"
+                    "Materia" => "DSW", 
+                    "Aula" => "201"
                 )        
             )
         );
 
-        function mostrarHorario($horario){
-            foreach($horario as $dia => $materia){
-                echo "<th>$dia</th>";
+        function mostrarHorario($array){
+            foreach($array as $dia => $horario){
+                echo "<h4>$dia</h4></br>";
+
+                foreach($horario as $hora => $info){
+                    echo "<p>$hora</p></br>";
+
+                    foreach($info as $tittle => $datos){
+                        echo "$tittle : $datos</br>";
+                        
+                    }
+                }
             }
         };
 
-        function mostrarAsignaturas($materia){
-            foreach($materia as $materia => $valor){
-                echo "<td>$materia</td>";
-            }
+        // function buscarAsignatura($dia, $hora, $minutos, $array){
+        //     if()
+        // }
+        
+        mostrarHorario($horario);
+        
+        if(!empty($_POST)){
+
         }
+
+        $formulario = $_POST['formulario'];
+        echo $formulario;
+        // mostrarAsignaturas($materia);
     ?>
-    <table style=width:50% border="1">
-        <tr>
-            <?php
-                mostrarHorario($horario);
-            ?>
-        </tr>
-        <tr>
-            <td>
-                <?php
-                    mostrarAsignaturas($materia);
-                ?>
-            </td>
-        </tr>
-    </table>
+    </br>
+    <form name="formulario" action="ut2.php" method="post">
+        <table>
+            <tr>
+                <th>Módulo</th>
+                <th>Hora</th>
+                <th>Minutos</th>
+            </tr>
+            <tr>
+                <td><input class="form-control" type="text" name="nombre"></td>
+                <td><input class="form-control" type="number" name="hora" min="8" max="14"></td>
+                <td><input class="form-control" type="number" name="minutos" min="0" max="59"></td>
+            </tr>
+        </table>
+        <input type="submit" />
+    </form>
 </body>
 </html>
