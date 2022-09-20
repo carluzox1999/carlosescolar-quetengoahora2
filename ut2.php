@@ -8,13 +8,6 @@
 </head>
 <body>
     <?php
-
-        // $horario = array(
-        //     "Tiempo" => array("08:00-08-55", "08:55-09:50", "09:50-10:45", "10:45-11:15", "11:15-12:10", "12:10-13:05", "13:05-14:00"),
-        //     "Materia" => array("EMR", "DSW", "DEW", "DPL", "DOR"),
-        //     "Docente" => array("Maria del Sol Garcia Tarajano", "Sergio Ramos Suarez", "Maria del carmen Rodriguez Suarez", "Maria Antonia Montesdeoca Viera", "Ermis Papakonstatinou Baez"),
-        //     "Aula" => array("201")
-        // );
         $horario = array(
             "Lunes" => array(
                 "08:00-08-55" => array(
@@ -112,50 +105,69 @@
             )
         );
 
-        function mostrarHorario($array){
-            foreach($array as $dia => $horario){
+        
+        function mostrarHorario(){
+            global $horario;
+            foreach($horario as $dia => $programa){
                 echo "<h4>$dia</h4></br>";
 
-                foreach($horario as $hora => $info){
+                foreach($programa as $hora => $info){
                     echo "<p>$hora</p></br>";
 
-                    foreach($info as $tittle => $datos){
-                        echo "$tittle : $datos</br>";
+                    foreach($info as $nombre => $datos){
+                        echo "$nombre: $datos</br>";
                         
                     }
                 }
             }
         };
-
-        // function buscarAsignatura($dia, $hora, $minutos, $array){
-        //     if()
-        // }
         
+        function modulo($diaModulo, $horaModulo, $minModulo){
+            global $horario;
+            $primeraHora = null;
+
+            if ($horaModulo==8 && $minModulo<=55) {
+                $primeraHora = "08:00 - 08:55";
+            }
+            if($horaModulo==8 && $minModulo<=55 || $horaModulo==9 && $minModulo<=50 ){
+                $primeraHora = "08:55 - 09:50";
+            }
+            if($horaModulo==9 && $minModulo<=50 || $horaModulo==10 && $minModulo<=45 ){
+                $primeraHora = "09:50 - 10:45";
+            }
+            if($horaModulo==11 && $minModulo<=15 || $horaModulo==12 && $minModulo<=10){
+                $primeraHora = "11:15 - 12:10";
+            }
+            if($horaModulo==12 && $minModulo<=10 || $horaModulo==13 && $minModulo<=05){
+                $primeraHora = "12:10 - 13:05";
+            }
+            if($horaModulo==13 && $minModulo<=05 || $horaModulo==14 && $minModulo<=00){
+                $primeraHora = "13:05 - 14:00";
+            }
+
+            foreach ($horario as $dia => $programa) {
+                if ($dia == $diaModulo) {
+                    foreach ($programa as $segundaHora => $info) {
+                        if ($primeraHora === $segundaHora) {
+                            foreach ($info as $nombre => $cont) {
+                              echo "$nombre: $cont";
+                            }
+                        }else{
+                            echo "No existe hora establecida";
+                        }
+                    }
+                }else{
+                  echo "No existe dia establecido";
+                }
+            }
+        };
+
         mostrarHorario($horario);
-        
-        if(!empty($_POST)){
-
-        }
-
-        $formulario = $_POST['formulario'];
-        echo $formulario;
-        // mostrarAsignaturas($materia);
     ?>
-    </br>
-    <form name="formulario" action="ut2.php" method="post">
-        <table>
-            <tr>
-                <th>Módulo</th>
-                <th>Hora</th>
-                <th>Minutos</th>
-            </tr>
-            <tr>
-                <td><input class="form-control" type="text" name="nombre"></td>
-                <td><input class="form-control" type="number" name="hora" min="8" max="14"></td>
-                <td><input class="form-control" type="number" name="minutos" min="0" max="59"></td>
-            </tr>
-        </table>
-        <input type="submit" />
-    </form>
+    <br>
+    <?php
+        
+        modulo("Miercoles","8", "40");
+    ?>
 </body>
 </html>
