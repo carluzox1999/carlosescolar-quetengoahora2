@@ -9,8 +9,18 @@
 <body>
     <style>
         div {
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            color: #B48C8C;
+            text-align: center;
+            border-radius: 30px;
             border: solid;
-            margin: 10px;
+            margin: 20px;
+        }
+        
+        h1{
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            color: #B48C8C;
+            text-align: center;
         }
 
         h2{
@@ -18,16 +28,25 @@
         }
 
         .pDiv{
-           margin: 15px; 
+           margin: 8px; 
         }
 
-        table{
-            width: 50%;
-            margin-top: 15px;
-            margin-bottom: 15px;
-            margin-left: 15px;
-            margin-right: 15px;
+        table {     
+            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+            font-size: 12px;      
+            width: 100%; 
+            text-align: center;    
+            border: 4px solid #B48C8C;
         }
+
+        table th{
+            background-color: gray;
+        }
+
+        .colorCelda{
+            background-color: #D3CDCD;
+        }
+
     </style>
     <?php
         $horario = array(
@@ -224,8 +243,8 @@
                 if ($dia == $diaModulo) {
                     foreach ($programa as $primeraHora2 => $info) {
                         if ($primeraHora == $primeraHora2) {
-                            echo "<div style='color: blue;'>";
-                                echo "<h2>Nos toca...:</h2>";
+                            echo "<div>";
+                                echo "<h2>Módulo actual</h2>";
                                 echo "</br>";
                             foreach ($info as $nombre => $cont) {
                                     echo "<p class='pDiv'>$nombre: $cont</p>";
@@ -239,34 +258,36 @@
     
         function mostrarHorario(){
             global $horario;
-            echo "<h1 class='pDiv'>HORARIO</h1>";
-            echo "<table border=1>";
+            echo "<table border='1 solid' cellpadding='4'>";
                 echo "<tr>";
-                    echo "<th scope='row'>HORA/DIA</th>";
-                    foreach($horario as $dia => $programa){
-                            echo "<th>";
-                                echo "$dia";
-                            echo "</th>";
-                        echo "</tr>";
-                        foreach($programa as $hora => $info){
-                            
-                                echo "<td>";
-                                    echo "<p>$hora</p>";
-                                echo "</td>";
-
-                            foreach($info as $nombre => $datos){
-
-                                    echo "<td>";
-                                        echo "$datos</p>";
-                                    echo "</td>"; 
-                            }
-                            
+                    echo "<th scope='row'>-----</th>";
+                    echo "<th>8:00 - 8:55</th>";
+                    echo "<th>8:55 - 9:50</th>";
+                    echo "<th>9:50 - 10:45</th>";
+                    echo "<th>11:15 - 12:10</th>";
+                    echo "<th>12:10 - 13:05</th>";
+                    echo "<th>13:05 - 14:00</th>";
+                echo "</tr>";
+                foreach($horario as $dia => $programa){
+                    echo "<tr>";
+                        echo "<td class='colorCelda'>";
+                            echo "<b>$dia</b>";
+                        echo "</td>";
+                    echo "</td>";
+                    foreach($programa as $hora => $info){
+                        echo "<td>";
+                        foreach($info as $nombre => $datos){
+                            echo "<p>$datos</p>";
                         }
-                        
+                        echo "</td>";
                     }
-                
+                }
             echo "</table>";
         };
+
+    ?>
+    <h1>HORARIO 2º DAW</h1>
+    <?php
         
         modulo("Martes","8", "40");
         echo "<hr>";
