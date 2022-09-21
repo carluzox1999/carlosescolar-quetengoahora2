@@ -7,6 +7,28 @@
     <title>Horario 2º DAW</title>
 </head>
 <body>
+    <style>
+        div {
+            border: solid;
+            margin: 10px;
+        }
+
+        h2{
+            margin: 15px;
+        }
+
+        .pDiv{
+           margin: 15px; 
+        }
+
+        table{
+            width: 50%;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    </style>
     <?php
         $horario = array(
             "Lunes" => array(
@@ -174,23 +196,7 @@
                 )            
             )
         );
-    
-        function mostrarHorario(){
-            global $horario;
-            foreach($horario as $dia => $programa){
-                echo "<h4>$dia</h4></br>";
 
-                foreach($programa as $hora => $info){
-                    echo "<p>$hora</p></br>";
-
-                    foreach($info as $nombre => $datos){
-                        echo "$nombre: $datos</br>";
-                        
-                    }
-                }
-            }
-        };
-        
         function modulo($diaModulo, $horaModulo, $minModulo){
             global $horario;
             // $primeraHora = null;
@@ -218,19 +224,49 @@
                 if ($dia == $diaModulo) {
                     foreach ($programa as $primeraHora2 => $info) {
                         if ($primeraHora == $primeraHora2) {
-                            echo "<h2>Nos toca...:</h2>";
+                            echo "<div style='color: blue;'>";
+                                echo "<h2>Nos toca...:</h2>";
+                                echo "</br>";
                             foreach ($info as $nombre => $cont) {
-                                echo "</br>$nombre: $cont";
+                                    echo "<p class='pDiv'>$nombre: $cont</p>";
                             }
                         }
+                        echo "</div>";
                     }
                 }
             }
-        };
+        };        
+    
+        function mostrarHorario(){
+            global $horario;
+            echo "<h1 class='pDiv'>HORARIO</h1>";
+            echo "<table border=1>";
+                echo "<tr>";
+                echo "<th scope='row'></th>";
+                    foreach($horario as $dia => $programa){
+                            echo "<th>";
+                                echo "<h3>$dia</h3>";
+                            echo "</th>";
+                        
+                        foreach($programa as $hora => $info){
+                            echo "<tr>";
+                                echo "<td>";
+                                    echo "<p>$hora</p>";
+                                echo "</td>";
 
+                            foreach($info as $nombre => $datos){
+                                    echo "<td>";
+                                        echo "$datos</p>";
+                                    echo "</td>";  
+                            }
+                            echo "</tr>";
+                        }
+                        echo "</tr>";
+                    }
+            echo "</table>";
+        };
         
-        
-        modulo("Miercoles","8", "40");
+        modulo("Martes","8", "40");
         echo "<hr>";
         mostrarHorario($horario);
     ?>
