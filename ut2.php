@@ -242,27 +242,29 @@
             echo "<h1 class='pDiv'>HORARIO</h1>";
             echo "<table border=1>";
                 echo "<tr>";
-                echo "<th scope='row'></th>";
+                    echo "<th scope='row'>HORA/DIA</th>";
                     foreach($horario as $dia => $programa){
                             echo "<th>";
-                                echo "<h3>$dia</h3>";
+                                echo "$dia";
                             echo "</th>";
-                        
+                        echo "</tr>";
                         foreach($programa as $hora => $info){
-                            echo "<tr>";
+                            
                                 echo "<td>";
                                     echo "<p>$hora</p>";
                                 echo "</td>";
 
                             foreach($info as $nombre => $datos){
+
                                     echo "<td>";
                                         echo "$datos</p>";
-                                    echo "</td>";  
+                                    echo "</td>"; 
                             }
-                            echo "</tr>";
+                            
                         }
-                        echo "</tr>";
+                        
                     }
+                
             echo "</table>";
         };
         
