@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horario 2º DAW</title>
+    <meta name="viewport" content="width=<, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-    <style>
+<style>
         div {
             font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
             color: #B48C8C;
@@ -49,9 +49,6 @@
 
     </style>
     <?php
-
-        
-
         $horario = array(
             "Lunes" => array(
                 "08:00-08-55" => array(
@@ -257,44 +254,17 @@
                     }
                 }
             }
-        };        
-    
-        function mostrarHorario(){
-            global $horario;
-            echo "<table border='1 solid' cellpadding='4'>";
-                echo "<tr>";
-                    echo "<th scope='row'>-----</th>";
-                    echo "<th>8:00 - 8:55</th>";
-                    echo "<th>8:55 - 9:50</th>";
-                    echo "<th>9:50 - 10:45</th>";
-                    echo "<th>11:15 - 12:10</th>";
-                    echo "<th>12:10 - 13:05</th>";
-                    echo "<th>13:05 - 14:00</th>";
-                echo "</tr>";
-                foreach($horario as $dia => $programa){
-                    echo "<tr>";
-                        echo "<td class='colorCelda'>";
-                            echo "<b>$dia</b>";
-                        echo "</td>";
-                    echo "</td>";
-                    foreach($programa as $hora => $info){
-                        echo "<td>";
-                        foreach($info as $nombre => $datos){
-                            echo "<p>$datos</p>";
-                        }
-                        echo "</td>";
-                    }
-                }
-            echo "</table>";
-        };
-
+        };      
     ?>
+        
     <h1>HORARIO 2º DAW</h1>
     <?php
-        
         modulo("Miercoles","9", "50");
         echo "<hr>";
-        mostrarHorario($horario);
     ?>
+
+<button type="button"> <img src="carlosescolar-quetengoahora2\imagenes\boton.png" height ="80" width="100" /></button>
+<a href="carlosescolar-quetengoahora2\imagenes\boton.png"></a>
+
 </body>
 </html>
