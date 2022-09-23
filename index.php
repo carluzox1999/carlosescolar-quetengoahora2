@@ -266,7 +266,7 @@
 <!-- <button type="button"> <img src="carlosescolar-quetengoahora2\imagenes\boton.png" height ="80" width="100" /></button> -->
 <!-- <a href="carlosescolar-quetengoahora2\imagenes\boton.png"></a> -->
 <div>
-    <input type="image" src="imagenes\boton.png" width="50%" onclick="location='ut2.php'"/>
+    <input type="image" src="imagenes\boton.png" width="30%" onclick="location='ut2.php'"/>
 </div>
 
 

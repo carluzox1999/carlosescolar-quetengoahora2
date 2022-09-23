@@ -9,11 +9,12 @@
 <body>
     <style>
         input[type=button], input[type=submit], input[type=reset] {
-            background-color: #04AA6D;
+            background-color: #B48C8C;
             width: 100%;
             border-radius: 30px;
-            border: none;
-            color: white;
+            border: 1;
+            color: black;
+            font-weight: bold;
             padding: 16px 32px;
             text-decoration: none;
             margin: 4px 2px;
