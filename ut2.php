@@ -8,14 +8,19 @@
 </head>
 <body>
     <style>
-        div {
-            font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-            color: #B48C8C;
-            text-align: center;
+        input[type=button], input[type=submit], input[type=reset] {
+            background-color: #04AA6D;
+            width: 100%;
             border-radius: 30px;
-            border: solid;
-            margin: 20px;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
         }
+
+        
         
         h1{
             font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
@@ -218,46 +223,6 @@
                 )            
             )
         );
-
-        function modulo($diaModulo, $horaModulo, $minModulo){
-            global $horario;
-            // $primeraHora = null;
-
-            if ($horaModulo>=8 && $minModulo<=55) {
-                $primeraHora = "08:00-08:55";
-            }
-            if($horaModulo>=8 && $minModulo<=55 || $horaModulo>=9 && $minModulo<=50 ){
-                $primeraHora = "08:55-09:50";
-            }
-            if($horaModulo>=9 && $minModulo<=50 || $horaModulo>=10 && $minModulo<=45 ){
-                $primeraHora = "09:50-10:45";
-            }
-            if($horaModulo>=11 && $minModulo<=15 || $horaModulo>=12 && $minModulo<=10){
-                $primeraHora = "11:15-12:10";
-            }
-            if($horaModulo>=12 && $minModulo<=10 || $horaModulo>=13 && $minModulo<=05){
-                $primeraHora = "12:10-13:05";
-            }
-            if($horaModulo>=13 && $minModulo<=05 || $horaModulo>=14 && $minModulo<=00){
-                $primeraHora = "13:05-14:00";
-            }
-
-            foreach ($horario as $dia => $programa) {
-                if ($dia == $diaModulo) {
-                    foreach ($programa as $primeraHora2 => $info) {
-                        if ($primeraHora == $primeraHora2) {
-                            echo "<div>";
-                                echo "<h2>Módulo actual</h2>";
-                                echo "</br>";
-                            foreach ($info as $nombre => $cont) {
-                                    echo "<p class='pDiv'>$nombre: $cont</p>";
-                            }
-                        }
-                        echo "</div>";
-                    }
-                }
-            }
-        };        
     
         function mostrarHorario(){
             global $horario;
@@ -289,10 +254,12 @@
         };
 
     ?>
+    <div>
+        <input type="button" value="Atrás" onclick="location='index.php'">
+    </div>
+    
     <h1>HORARIO 2º DAW</h1>
     <?php
-        
-        modulo("Miercoles","9", "50");
         echo "<hr>";
         mostrarHorario($horario);
     ?>
