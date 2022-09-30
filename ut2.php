@@ -55,9 +55,8 @@
 
     </style>
     <?php
-
-        
-
+        // https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Form%21OptGroup.php/function/OptGroup%3A%3AdoFlattenOptions/9.0.x
+        // Dos horarios en distintos arrays, uno de alumn DAM y otro de DAW, que el selector nos ponga esos horarios
         $horario = array(
             "Lunes" => array(
                 "08:00-08-55" => array(
@@ -227,6 +226,7 @@
     
         function mostrarHorario(){
             global $horario;
+
             echo "<table border='1 solid' cellpadding='4'>";
                 echo "<tr>";
                     echo "<th scope='row'>-----</th>";
@@ -254,14 +254,52 @@
             echo "</table>";
         };
 
+
+
     ?>
     <div>
         <input type="button" value="Atrás" onclick="location='index.php'">
     </div>
+    <hr>
+
+    <!-- ---------------------------------------------- -->
+    <!-- Cambiar por el horario de un alimno distinto, uno de DAM y otro de DAW -->
+    <!-- Todo esto en un formulario -->
+
+    <form action="ut2.php" method="post">
+        <label for="horario">Horarios:</label>
+        <select  name="horarioTipo" id="horarioTipo">
+            <optgroup label="HORARIOS">
+                <option value="horarioDAW">2º DAW</option>
+                <option value="horarioDAM">2º DAM</option>
+            </optgroup>
+        </select>
+        <input type="submit" value="Ver Horario">
+    </form>
     
+    
+
+    <!-- <select name="selector" id="selector">
+        <?php
+            
+            // if ($horario_type != $horario['type']) {
+            //     if ($album_type != '') {
+            //     echo '</optgroup>';
+            //     }
+            //     echo '<optgroup label="'.ucfirst($album['type']).' Backgrounds">';
+            // }
+            // echo '<option value="'.$album['id'].'">'.htmlspecialchars($album['title']).'</option>';
+            // $album_type = $album['type']; 
+
+            // if ($album_type != '') {
+            // echo '</optgroup>';
+            // }
+        ?>
+    </select> -->
+    <!-- ---------------------------------------------- -->
+
     <h1>HORARIO 2º DAW</h1>
     <?php
-        echo "<hr>";
         mostrarHorario($horario);
     ?>
 </body>
