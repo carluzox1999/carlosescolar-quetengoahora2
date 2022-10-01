@@ -473,7 +473,7 @@
     <div>
         <form action="ut2.php" method="post">
             <label for="horario">Horarios:</label>
-            <select  name="horarioTipo[]">
+            <select  name="horarioTipo">
                 <optgroup label="GRUPOS">
                     <option value="horarioDAW" selected>2º DAW</option>
                     <option value="horarioDAM">2º DAM</option>
@@ -488,19 +488,14 @@
     <?php
         // $submit = $_POST["submit"];
         // $tipo = $_POST["horarioTipo"];
-
-        function seleccionHorario($horario, $horarioDAM){
-            if(isset($_POST["submit"])){
-                if(!empty($_POST["horarioTipo"])){
-                    foreach($_POST["horarioTipo"] as $selected){
-                        $mostrarHDAW = mostrarHorario($horario);
-                        $selected = $mostrarHDAW;
-                        echo "$selected";
-                    }
-                    // echo "<h1>HORARIO 2º DAW</h1>";
-                    // $selected = $_POST["horarioTipo"];
-                    // echo "$selected";
-                }
+        // mostrarHorario($horario);
+        // mostrarHorarioDAM($horarioDAM);
+        if(isset($_POST["submit"])){
+            if($_POST["horarioTipo"] == "horarioDAW"){
+                mostrarHorario($horario);
+            }
+            if ($_POST["horarioTipo"] == "horarioDAM") {
+                mostrarHorarioDAM($horarioDAM);
             }
         }
     ?>
