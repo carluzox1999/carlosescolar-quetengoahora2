@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-<style>
+    <style>
         div {
             font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
             color: #B48C8C;
@@ -49,6 +49,8 @@
 
     </style>
     <?php
+        
+
         $horario = array(
             "Lunes" => array(
                 "08:00-08-55" => array(
@@ -216,9 +218,46 @@
             )
         );
 
-        function modulo($diaModulo, $horaModulo, $minModulo){
+        function modulo(){
             global $horario;
-            // $primeraHora = null;
+            
+            date_default_timezone_set("Atlantic/Canary");
+
+            $dActual = date("D");
+            $hActual = date("H");
+            $mActual = date("M");
+
+            switch($dActual){
+                case "Monday":
+                    $dActual = "Lunes";
+                    break;
+                
+                case "Tuesday":
+                    $dActual = "Martes";
+                    break;
+    
+                case "Wednesday":
+                    $dActual = "Miercoles";
+                    break;
+    
+                case "Thursday":
+                    $dActual = "Jueves";
+                     break;
+                
+                case "Friday":
+                    $dActual = "Viernes";
+                    break;
+            }
+
+            $diaModulo = $dActual;
+            $horaModulo = $hActual;
+            $minModulo = $mActual;
+
+            if($diaModulo !="Lunes" && $diaModulo !="Martes" && $diaModulo !="Miércoles" && $diaModulo !="Jueves" && $diaModulo !="Viernes"){
+                echo "<div>";
+                    echo "No hay clase";
+                echo "</div>";
+            };
 
             if ($horaModulo>=8 && $minModulo<=55) {
                 $primeraHora = "08:00-08:55";
@@ -259,7 +298,7 @@
         
     <h1>HORARIO 2º DAW</h1>
     <?php
-        modulo("Miercoles","9", "50");
+        modulo();
         echo "<hr>";
     ?>
 
