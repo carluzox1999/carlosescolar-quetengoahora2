@@ -232,6 +232,173 @@
                 )            
             )
         );
+
+        $horarioDAM = array(
+            "Lunes" => array(
+                "08:00-08-55" => array(
+                    "Docente" => "Jose Ignacio Zeballos", 
+                    "Materia" => "PGV",
+                    "Aula" => "103"
+                ),
+                "08:55-09:50" => array(
+                    "Docente" => "Jose Ignacio Zeballos",
+                    "Materia" => "PGV", 
+                    "Aula" => "103"
+                ),
+                "09:50-10:45" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez",
+                    "Materia" => "SSG", 
+                    "Aula" => "103"
+                ),
+                "11:15-12:10" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSG", 
+                    "Aula" => "103"
+                ),   
+                "12:10-13:05" => array(
+                    "Docente" => "Miguel Angel Hernandez Rodriguez", 
+                    "Materia" => "PGL", 
+                    "Aula" => "103"
+                ),  
+                "13:05-14:00" => array(
+                    "Docente" => "Maria del Sol Garcia Tarajano", 
+                    "Materia" => "EMR", 
+                    "Aula" => "103"
+                ),              
+            ),
+
+            "Martes" =>  array(
+                "08:00-08-55" => array(
+                    "Docente" => "Maria del Sol Garcia Tarajano", 
+                    "Materia" => "EMR",
+                    "Aula" => "103"
+                ),
+                "08:55-09:50" => array(
+                    "Docente" => "Maria del Cristo Garcia Leon", 
+                    "Materia" => "DAD",
+                    "Aula" => "103"
+                ),
+                "09:50-10:45" => array(
+                    "Docente" => "Maria del Cristo Garcia Leon", 
+                    "Materia" => "DAD",
+                    "Aula" => "103"
+                ),
+                "11:15-12:10" => array(
+                    "Docente" => "Miguel Angel Hernandez Rodriguez", 
+                    "Materia" => "PGL",
+                    "Aula" => "103"
+                ),
+                "12:10-13:05" => array(
+                    "Docente" => "Jose Ignacio Zeballos", 
+                    "Materia" => "AED",
+                    "Aula" => "103"
+                ),
+                "13:05-14:00" => array(
+                    "Docente" => "Jose Ignacio Zeballos", 
+                    "Materia" => "AED",
+                    "Aula" => "103"
+                ),            
+            ),
+
+            "Miercoles" =>  array(
+                "08:00-08:55" => array(
+                    "Docente" => "Jose Ignacio Zeballos",
+                    "Materia" => "AED", 
+                    "Aula" => "103"
+                ),
+                "08:55-09:50" => array(
+                    "Docente" => "Jose Ignacio Zeballos",
+                    "Materia" => "AED", 
+                    "Aula" => "103"
+                ),
+                "09:50-10:45" => array(
+                    "Docente" => "Jose Ignacio Zeballos", 
+                    "Materia" => "AED",
+                    "Aula" => "103"
+                ),
+                "11:15-12:10" => array(
+                    "Docente" => "Maria del Cristo Garcia Leon", 
+                    "Materia" => "DAD",
+                    "Aula" => "103"
+                ),
+                "12:10-13:05" => array(
+                    "Docente" => "Maria del Cristo Garcia Leon", 
+                    "Materia" => "DAD",
+                    "Aula" => "103"
+                ), 
+                "13:05-14:00" => array(
+                    "Docente" => "Jose Ignacio Zeballos", 
+                    "Materia" => "PGV",
+                    "Aula" => "103"
+                ),        
+            ),
+
+            "Jueves" =>  array(
+                "08:00-10:45" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSG",
+                    "Aula" => "103"
+                ),
+                "08:55-09:50" => array(
+                    "Docente" => "Jose Ignacio Zeballos", 
+                    "Materia" => "AED",
+                    "Aula" => "103"
+                ),
+                "09:50-10:45" => array(
+                    "Docente" => "Jose Ignacio Zeballos", 
+                    "Materia" => "AED",
+                    "Aula" => "103"
+                ),
+                "11:15-12:10" => array(
+                    "Docente" => "Maria del Cristo Garcia Leon", 
+                    "Materia" => "DAD",
+                    "Aula" => "103"
+                ),
+                "12:10-13:05" => array(
+                    "Docente" => "Maria del Cristo Garcia Leon", 
+                    "Materia" => "DAD",
+                    "Aula" => "103"
+                ),
+                "13:05-14:00" => array(
+                    "Docente" => "Jose Ignacio Zeballos", 
+                    "Materia" => "PGV",
+                    "Aula" => "103"
+                ) 
+            ),
+
+            "Viernes" =>  array(
+                "08:00-08:55" => array(
+                    "Docente" => "Maria Antonia Montesdeoca Viera", 
+                    "Materia" => "SSG",
+                    "Aula" => "103"
+                ),
+                "08:55-09:50" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSG",
+                    "Aula" => "103"
+                ),
+                "09:50-10:45" => array(
+                    "Docente" => "Maria del Cristo Garcia Leon",
+                    "Materia" => "DAD", 
+                    "Aula" => "103"
+                ),
+                "11:15-12:10" => array(
+                    "Docente" => "Maria del Sol Garcia Tarajano", 
+                    "Materia" => "EMR", 
+                    "Aula" => "103"
+                ),
+                "12:10-13:05" => array(
+                    "Docente" => "Miguel Angel Hernandez Rodriguez", 
+                    "Materia" => "PGL", 
+                    "Aula" => "103"
+                ),
+                "13:05-14:00" => array(
+                    "Docente" => "Miguel Angel Hernandez Rodriguez", 
+                    "Materia" => "PGL", 
+                    "Aula" => "103"
+                )            
+            )
+        );
     
         function mostrarHorario(){
             global $horario;
@@ -263,8 +430,37 @@
             echo "</table>";
         };
 
+        function mostrarHorarioDAM(){
+            global $horarioDAM;
 
+            echo "<table border='1 solid' cellpadding='4'>";
+                echo "<tr>";
+                    echo "<th scope='row'>-----</th>";
+                    echo "<th>8:00 - 8:55</th>";
+                    echo "<th>8:55 - 9:50</th>";
+                    echo "<th>9:50 - 10:45</th>";
+                    echo "<th>11:15 - 12:10</th>";
+                    echo "<th>12:10 - 13:05</th>";
+                    echo "<th>13:05 - 14:00</th>";
+                echo "</tr>";
+                foreach($horarioDAM as $dia => $programa){
+                    echo "<tr>";
+                        echo "<td class='colorCelda'>";
+                            echo "<b>$dia</b>";
+                        echo "</td>";
+                    echo "</td>";
+                    foreach($programa as $hora => $info){
+                        echo "<td>";
+                        foreach($info as $nombre => $datos){
+                            echo "<p>$datos</p>";
+                        }
+                        echo "</td>";
+                    }
+                }
+            echo "</table>";
+        };
 
+        
     ?>
     <input type="button" value="Atrás" onclick="location='index.php'">
     
@@ -277,9 +473,9 @@
     <div>
         <form action="ut2.php" method="post">
             <label for="horario">Horarios:</label>
-            <select  name="horarioTipo" id="horarioTipo">
-                <optgroup label="HORARIOS">
-                    <option value="horarioDAW">2º DAW</option>
+            <select  name="horarioTipo[]">
+                <optgroup label="GRUPOS">
+                    <option value="horarioDAW" selected>2º DAW</option>
                     <option value="horarioDAM">2º DAM</option>
                 </optgroup>
             </select>
@@ -289,9 +485,24 @@
     
     <!-- ---------------------------------------------- -->
 
-    <h1>HORARIO 2º DAW</h1>
     <?php
-        mostrarHorario($horario);
+        // $submit = $_POST["submit"];
+        // $tipo = $_POST["horarioTipo"];
+
+        function seleccionHorario($horario, $horarioDAM){
+            if(isset($_POST["submit"])){
+                if(!empty($_POST["horarioTipo"])){
+                    foreach($_POST["horarioTipo"] as $selected){
+                        $mostrarHDAW = mostrarHorario($horario);
+                        $selected = $mostrarHDAW;
+                        echo "$selected";
+                    }
+                    // echo "<h1>HORARIO 2º DAW</h1>";
+                    // $selected = $_POST["horarioTipo"];
+                    // echo "$selected";
+                }
+            }
+        }
     ?>
 </body>
 </html>

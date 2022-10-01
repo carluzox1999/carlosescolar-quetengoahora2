@@ -220,7 +220,7 @@
 
         function modulo(){
             global $horario;
-            
+
             date_default_timezone_set("Atlantic/Canary");
 
             $dActual = date("D");
@@ -296,7 +296,7 @@
         };      
     ?>
         
-    <h1>HORARIO 2º DAW</h1>
+    <h1>HORARIOS Y MODULOS</h1>
     <?php
         modulo();
         echo "<hr>";
