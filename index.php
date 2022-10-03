@@ -717,7 +717,7 @@
             )
         );
 
-        function modulo(){
+        function moduloDAW(){
             global $horario;
 
             date_default_timezone_set("Atlantic/Canary");
@@ -769,9 +769,6 @@
                 $primeraHora = "09:50-10:45";
             }
             if($horaModulo>=11 && $minModulo<=15 || $horaModulo>=12 && $minModulo<=10){
-                if($horaModulo>=11 && $minModulo>=15 || $horaModulo<=12 && $minModulo<=10){
-                    echo "Recreo";                
-                }
                 $primeraHora = "11:15-12:10";
             }
             if($horaModulo>=12 && $minModulo<=10 || $horaModulo>=13 && $minModulo<=05){
@@ -796,14 +793,247 @@
                     }
                 }
             }
-        };      
+        };   
+
+        function moduloDAM(){
+            global $horarioDAM;
+
+            date_default_timezone_set("Atlantic/Canary");
+
+            $dActual = date("D");
+            $hActual = date("H");
+            $mActual = date("m");
+
+            switch($dActual){
+                case "Mon":
+                    $dActual = "Lunes";
+                    break;
+                
+                case "Tue":
+                    $dActual = "Martes";
+                    break;
+    
+                case "Wed":
+                    $dActual = "Miercoles";
+                    break;
+    
+                case "Thu":
+                    $dActual = "Jueves";
+                     break;
+                
+                case "Fri":
+                    $dActual = "Viernes";
+                    break;
+            }
+
+            $diaModulo = $dActual;
+            $horaModulo = $hActual;
+            $minModulo = $mActual;
+
+
+            if($diaModulo !="Lunes" && $diaModulo !="Martes" && $diaModulo !="Miércoles" && $diaModulo !="Jueves" && $diaModulo !="Viernes"){
+                echo "<div>";
+                    echo "No hay clase";
+                echo "</div>";
+            };
+
+            if ($horaModulo>=8 && $minModulo<=55) {
+                $primeraHora = "08:00-08:55";
+            }
+            if($horaModulo>=8 && $minModulo<=55 || $horaModulo>=9 && $minModulo<=50 ){
+                $primeraHora = "08:55-09:50";
+            }
+            if($horaModulo>=9 && $minModulo>=50 || $horaModulo>=10 && $minModulo<=45 ){
+                $primeraHora = "09:50-10:45";
+            }
+            if($horaModulo>=11 && $minModulo<=15 || $horaModulo>=12 && $minModulo<=10){
+                $primeraHora = "11:15-12:10";
+            }
+            if($horaModulo>=12 && $minModulo<=10 || $horaModulo>=13 && $minModulo<=05){
+                $primeraHora = "12:10-13:05";
+            }
+            if($horaModulo>=13 && $minModulo<=05 || $horaModulo>=14 && $minModulo<=00){
+                $primeraHora = "13:05-14:00";
+            }
+
+            foreach ($horarioDAM as $dia => $programa) {
+                if ($dia == $diaModulo) {
+                    foreach ($programa as $primeraHora2 => $info) {
+                        if ($primeraHora == $primeraHora2) {
+                            echo "<div>";
+                                echo "<h2>Módulo actual</h2>";
+                                echo "</br>";
+                            foreach ($info as $nombre => $cont) {
+                                    echo "<p class='pDiv'>$nombre: $cont</p>";
+                            }
+                        }
+                        echo "</div>";
+                    }
+                }
+            }
+        }; 
+        
+        function moduloDocente1(){
+            global $horarioDocente1;
+
+            date_default_timezone_set("Atlantic/Canary");
+
+            $dActual = date("D");
+            $hActual = date("H");
+            $mActual = date("m");
+
+            switch($dActual){
+                case "Mon":
+                    $dActual = "Lunes";
+                    break;
+                
+                case "Tue":
+                    $dActual = "Martes";
+                    break;
+    
+                case "Wed":
+                    $dActual = "Miercoles";
+                    break;
+    
+                case "Thu":
+                    $dActual = "Jueves";
+                     break;
+                
+                case "Fri":
+                    $dActual = "Viernes";
+                    break;
+            }
+
+            $diaModulo = $dActual;
+            $horaModulo = $hActual;
+            $minModulo = $mActual;
+
+
+            if($diaModulo !="Lunes" && $diaModulo !="Martes" && $diaModulo !="Miércoles" && $diaModulo !="Jueves" && $diaModulo !="Viernes"){
+                echo "<div>";
+                    echo "No hay clase";
+                echo "</div>";
+            };
+
+            if ($horaModulo>=8 && $minModulo<=55) {
+                $primeraHora = "08:00-08:55";
+            }
+            if($horaModulo>=8 && $minModulo<=55 || $horaModulo>=9 && $minModulo<=50 ){
+                $primeraHora = "08:55-09:50";
+            }
+            if($horaModulo>=9 && $minModulo>=50 || $horaModulo>=10 && $minModulo<=45 ){
+                $primeraHora = "09:50-10:45";
+            }
+            if($horaModulo>=11 && $minModulo<=15 || $horaModulo>=12 && $minModulo<=10){
+                $primeraHora = "11:15-12:10";
+            }
+            if($horaModulo>=12 && $minModulo<=10 || $horaModulo>=13 && $minModulo<=05){
+                $primeraHora = "12:10-13:05";
+            }
+            if($horaModulo>=13 && $minModulo<=05 || $horaModulo>=14 && $minModulo<=00){
+                $primeraHora = "13:05-14:00";
+            }
+
+            foreach ($horarioDocente1 as $dia => $programa) {
+                if ($dia == $diaModulo) {
+                    foreach ($programa as $primeraHora2 => $info) {
+                        if ($primeraHora == $primeraHora2) {
+                            echo "<div>";
+                                echo "<h2>Módulo actual</h2>";
+                                echo "</br>";
+                            foreach ($info as $nombre => $cont) {
+                                    echo "<p class='pDiv'>$nombre: $cont</p>";
+                            }
+                        }
+                        echo "</div>";
+                    }
+                }
+            }
+        }; 
+
+        function moduloDocente2(){
+            global $horarioDocente2;
+
+            date_default_timezone_set("Atlantic/Canary");
+
+            $dActual = date("D");
+            $hActual = date("H");
+            $mActual = date("m");
+
+            switch($dActual){
+                case "Mon":
+                    $dActual = "Lunes";
+                    break;
+                
+                case "Tue":
+                    $dActual = "Martes";
+                    break;
+    
+                case "Wed":
+                    $dActual = "Miercoles";
+                    break;
+    
+                case "Thu":
+                    $dActual = "Jueves";
+                     break;
+                
+                case "Fri":
+                    $dActual = "Viernes";
+                    break;
+            }
+
+            $diaModulo = $dActual;
+            $horaModulo = $hActual;
+            $minModulo = $mActual;
+
+
+            if($diaModulo !="Lunes" && $diaModulo !="Martes" && $diaModulo !="Miércoles" && $diaModulo !="Jueves" && $diaModulo !="Viernes"){
+                echo "<div>";
+                    echo "No hay clase";
+                echo "</div>";
+            };
+
+            if ($horaModulo>=8 && $minModulo<=55) {
+                $primeraHora = "08:00-08:55";
+            }
+            if($horaModulo>=8 && $minModulo<=55 || $horaModulo>=9 && $minModulo<=50 ){
+                $primeraHora = "08:55-09:50";
+            }
+            if($horaModulo>=9 && $minModulo>=50 || $horaModulo>=10 && $minModulo<=45 ){
+                $primeraHora = "09:50-10:45";
+            }
+            if($horaModulo>=11 && $minModulo<=15 || $horaModulo>=12 && $minModulo<=10){
+                $primeraHora = "11:15-12:10";
+            }
+            if($horaModulo>=12 && $minModulo<=10 || $horaModulo>=13 && $minModulo<=05){
+                $primeraHora = "12:10-13:05";
+            }
+            if($horaModulo>=13 && $minModulo<=05 || $horaModulo>=14 && $minModulo<=00){
+                $primeraHora = "13:05-14:00";
+            }
+
+            foreach ($horarioDocente2 as $dia => $programa) {
+                if ($dia == $diaModulo) {
+                    foreach ($programa as $primeraHora2 => $info) {
+                        if ($primeraHora == $primeraHora2) {
+                            echo "<div>";
+                                echo "<h2>Módulo actual</h2>";
+                                echo "</br>";
+                            foreach ($info as $nombre => $cont) {
+                                    echo "<p class='pDiv'>$nombre: $cont</p>";
+                            }
+                        }
+                        echo "</div>";
+                    }
+                }
+            }
+        }; 
+
+           
     ?>
         
     <h1>HORARIOS Y MODULOS</h1>
-    <?php
-        modulo();
-        echo "<hr>";
-    ?>
+    <hr>
     <div>
         <form action="ut2.php" method="post">
             <label for="horario">Horarios:</label>
