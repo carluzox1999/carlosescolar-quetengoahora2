@@ -1047,7 +1047,9 @@
                     <option value="docente2">Sergio Ramos Suarez</option>
                 </optgroup>
             </select>
+            <div>
             <button type="submit" style="border-radius: 60px; cursor: pointer;"><img src="imagenes/boton.png" width="20%" style="padding-top: 3em;"></button>
+            </div>
         </form>
     </div>
 
