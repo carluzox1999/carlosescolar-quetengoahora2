@@ -62,10 +62,11 @@
         }
 
     </style>
-    <?php
+    <input type="button" value="Atrás" onclick="location='index.php'">
+    
+    <hr>
 
-        // https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Form%21OptGroup.php/function/OptGroup%3A%3AdoFlattenOptions/9.0.x
-        // Dos horarios en distintos arrays, uno de alumn DAM y otro de DAW, que el selector nos ponga esos horarios
+    <?php
         $horario = array(
             "Lunes" => array(
                 "08:00-08-55" => array(
@@ -399,7 +400,341 @@
                 )            
             )
         );
-    
+
+        $horarioDocente1 = array(
+            "Lunes" => array(
+                "08:00-08-55" => array(
+                    "Docente" => "", 
+                    "Materia" => "",
+                    "Aula" => ""
+                ),
+                "08:55-09:50" => array(
+                    "Docente" => "",
+                    "Materia" => "", 
+                    "Aula" => ""
+                ),
+                "09:50-10:45" => array(
+                    "Docente" => "",
+                    "Materia" => "", 
+                    "Aula" => ""
+                ),
+                "11:15-12:10" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSF",
+                    "Aula" => "1º DAW"
+                ),   
+                "12:10-13:05" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSG",
+                    "Aula" => "2º DAM"
+                ),  
+                "13:05-14:00" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSG",
+                    "Aula" => "2º DAM"
+                ),              
+            ),
+
+            "Martes" =>  array(
+                "08:00-08-55" => array(
+                    "Docente" => "", 
+                    "Materia" => "",
+                    "Aula" => ""
+                ),
+                "08:55-09:50" => array(
+                    "Docente" => "", 
+                    "Materia" => "",
+                    "Aula" => ""
+                ),
+                "09:50-10:45" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSF",
+                    "Aula" => "1º DAW"
+                ),
+                "11:15-12:10" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSF",
+                    "Aula" => "1º DAW"
+                ),
+                "12:10-13:05" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "DOR",
+                    "Aula" => "2º DAW"
+                ),
+                "13:05-14:00" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "DOR",
+                    "Aula" => "2º DAW"
+                ),            
+            ),
+
+            "Miercoles" =>  array(
+                "08:00-08:55" => array(
+                    "Docente" => "",
+                    "Materia" => "", 
+                    "Aula" => ""
+                ),
+                "08:55-09:50" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSF",
+                    "Aula" => "1º DAW"
+                ),
+                "09:50-10:45" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSF",
+                    "Aula" => "1º DAM"
+                ),
+                "11:15-12:10" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSF",
+                    "Aula" => "1º DAM"
+                ),
+                "12:10-13:05" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "DOR",
+                    "Aula" => "2º DAW"
+                ), 
+                "13:05-14:00" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "DOR",
+                    "Aula" => "2º DAW"
+                ),        
+            ),
+
+            "Jueves" =>  array(
+                "08:00-10:45" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSG",
+                    "Aula" => "2º DAM"
+                ),
+                "08:55-09:50" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSG",
+                    "Aula" => "2º DAM"
+                ),
+                "09:50-10:45" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSG",
+                    "Aula" => "2º DAM"
+                ),
+                "11:15-12:10" => array(
+                    "Docente" => "",
+                    "Materia" => "", 
+                    "Aula" => ""
+                ),   
+                "12:10-13:05" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSF",
+                    "Aula" => "1º DAM"
+                ),  
+                "13:05-14:00" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSF",
+                    "Aula" => "1º DAW"
+                ),  
+            ),
+
+            "Viernes" =>  array(
+                "08:00-08:55" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "DOR",
+                    "Aula" => "2º DAW"
+                ),
+                "08:55-09:50" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "DOR",
+                    "Aula" => "2º DAW"
+                ),
+                "09:50-10:45" => array(
+                    "Docente" => "",
+                    "Materia" => "", 
+                    "Aula" => ""
+                ),
+                "11:15-12:10" => array(
+                    "Docente" => "", 
+                    "Materia" => "", 
+                    "Aula" => ""
+                ),
+                "12:10-13:05" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSF",
+                    "Aula" => "1º DAM"
+                ),
+                "13:05-14:00" => array(
+                    "Docente" => "Ermis Papakonstantinou Baez", 
+                    "Materia" => "SSF",
+                    "Aula" => "1º DAM"
+                )            
+            )
+        );
+
+        $horarioDocente2 = array(
+            "Lunes" => array(
+                "08:00-08-55" => array(
+                    "Docente" => "", 
+                    "Materia" => "",
+                    "Aula" => ""
+                ),
+                "08:55-09:50" => array(
+                    "Docente" => "Sergio Ramos Suarez",
+                    "Materia" => "DSW", 
+                    "Aula" => "2º DAW"
+                ),
+                "09:50-10:45" => array(
+                    "Docente" => "Sergio Ramos Suarez",
+                    "Materia" => "DSW", 
+                    "Aula" => "2º DAW"
+                ),
+                "11:15-12:10" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "IMW", 
+                    "Aula" => "2º ASIR"
+                ),   
+                "12:10-13:05" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "IMW", 
+                    "Aula" => "2º ASIR"
+                ),  
+                "13:05-14:00" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "IMW", 
+                    "Aula" => "2º ASIR"
+                ),              
+            ),
+
+            "Martes" =>  array(
+                "08:00-08-55" => array(
+                    "Docente" => "", 
+                    "Materia" => "",
+                    "Aula" => ""
+                ),
+                "08:55-09:50" => array(
+                    "Docente" => "", 
+                    "Materia" => "",
+                    "Aula" => ""
+                ),
+                "09:50-10:45" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "DSW",
+                    "Aula" => "2º DAW"
+                ),
+                "11:15-12:10" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "DSW",
+                    "Aula" => "2º DAW"
+                ),
+                "12:10-13:05" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "LND",
+                    "Aula" => "1º ASIR"
+                ),
+                "13:05-14:00" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "LND",
+                    "Aula" => "1º ASIR"
+                ),            
+            ),
+
+            "Miercoles" =>  array(
+                "08:00-08:55" => array(
+                    "Docente" => "",
+                    "Materia" => "", 
+                    "Aula" => ""
+                ),
+                "08:55-09:50" => array(
+                    "Docente" => "Sergio Ramos Suarez",
+                    "Materia" => "LND", 
+                    "Aula" => "1º ASIR"
+                ),
+                "09:50-10:45" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "DSW",
+                    "Aula" => "2º DAW"
+                ),
+                "11:15-12:10" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "DSW",
+                    "Aula" => "2º DAW"
+                ),
+                "12:10-13:05" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "PGV",
+                    "Aula" => "2º DAM"
+                ), 
+                "13:05-14:00" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "PGV",
+                    "Aula" => "2º DAM"
+                ),        
+            ),
+
+            "Jueves" =>  array(
+                "08:00-10:45" => array(
+                    "Docente" => "", 
+                    "Materia" => "",
+                    "Aula" => ""
+                ),
+                "08:55-09:50" => array(
+                    "Docente" => "", 
+                    "Materia" => "",
+                    "Aula" => ""
+                ),
+                "09:50-10:45" => array(
+                    "Docente" => "", 
+                    "Materia" => "",
+                    "Aula" => ""
+                ),
+                "11:15-12:10" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "IMW", 
+                    "Aula" => "2º ASIR"
+                ),   
+                "12:10-13:05" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "IMW", 
+                    "Aula" => "2º ASIR"
+                ),  
+                "13:05-14:00" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "IMW", 
+                    "Aula" => "2º ASIR"
+                ),  
+            ),
+
+            "Viernes" =>  array(
+                "08:00-08:55" => array(
+                    "Docente" => "", 
+                    "Materia" => "",
+                    "Aula" => ""
+                ),
+                "08:55-09:50" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "LND",
+                    "Aula" => "201"
+                ),
+                "09:50-10:45" => array(
+                    "Docente" => "Sergio Ramos Suarez",
+                    "Materia" => "PGV", 
+                    "Aula" => "2º DAM"
+                ),
+                "11:15-12:10" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "EMR", 
+                    "Aula" => "2º DAM"
+                ),
+                "12:10-13:05" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "DSW", 
+                    "Aula" => "2º DAW"
+                ),
+                "13:05-14:00" => array(
+                    "Docente" => "Sergio Ramos Suarez", 
+                    "Materia" => "DSW", 
+                    "Aula" => "2º DAW"
+                )            
+            )
+        );
+
         function mostrarHorario(){
             global $horario;
 
@@ -460,44 +795,86 @@
             echo "</table>";
         };
 
-        
-    ?>
-    <input type="button" value="Atrás" onclick="location='index.php'">
+        function mostrarHorarioDocente1(){
+            global $horarioDocente1;
+
+            echo "<table border='1 solid' cellpadding='4'>";
+                echo "<tr>";
+                    echo "<th scope='row'>-----</th>";
+                    echo "<th>8:00 - 8:55</th>";
+                    echo "<th>8:55 - 9:50</th>";
+                    echo "<th>9:50 - 10:45</th>";
+                    echo "<th>11:15 - 12:10</th>";
+                    echo "<th>12:10 - 13:05</th>";
+                    echo "<th>13:05 - 14:00</th>";
+                echo "</tr>";
+                foreach($horarioDocente1 as $dia => $programa){
+                    echo "<tr>";
+                        echo "<td class='colorCelda'>";
+                            echo "<b>$dia</b>";
+                        echo "</td>";
+                    echo "</td>";
+                    foreach($programa as $hora => $info){
+                        echo "<td>";
+                        foreach($info as $nombre => $datos){
+                            echo "<p>$datos</p>";
+                        }
+                        echo "</td>";
+                    }
+                }
+            echo "</table>";
+        };
+
+        function mostrarHorarioDocente2(){
+            global $horarioDocente2;
+
+            echo "<table border='1 solid' cellpadding='4'>";
+                echo "<tr>";
+                    echo "<th scope='row'>-----</th>";
+                    echo "<th>8:00 - 8:55</th>";
+                    echo "<th>8:55 - 9:50</th>";
+                    echo "<th>9:50 - 10:45</th>";
+                    echo "<th>11:15 - 12:10</th>";
+                    echo "<th>12:10 - 13:05</th>";
+                    echo "<th>13:05 - 14:00</th>";
+                echo "</tr>";
+                foreach($horarioDocente2 as $dia => $programa){
+                    echo "<tr>";
+                        echo "<td class='colorCelda'>";
+                            echo "<b>$dia</b>";
+                        echo "</td>";
+                    echo "</td>";
+                    foreach($programa as $hora => $info){
+                        echo "<td>";
+                        foreach($info as $nombre => $datos){
+                            echo "<p>$datos</p>";
+                        }
+                        echo "</td>";
+                    }
+                }
+            echo "</table>";
+        };
     
-    <hr>
-
-    <!-- ---------------------------------------------- -->
-    <!-- Cambiar por el horario de un alumno distinto, uno de DAM y otro de DAW -->
-    <!-- Todo esto en un formulario -->
-
-    <div>
-        <form action="ut2.php" method="post">
-            <label for="horario">Horarios:</label>
-            <select  name="horarioTipo">
-                <optgroup label="GRUPOS">
-                    <option value="horarioDAW" selected>2º DAW</option>
-                    <option value="horarioDAM">2º DAM</option>
-                </optgroup>
-            </select>
-            <input type="submit" value="Ver Horario">
-        </form>
-    </div>
-    
-    <!-- ---------------------------------------------- -->
-
-    <?php
-        // $submit = $_POST["submit"];
-        // $tipo = $_POST["horarioTipo"];
-        // mostrarHorario($horario);
-        // mostrarHorarioDAM($horarioDAM);
-        if(isset($_POST["submit"])){
-            if($_POST["horarioTipo"] == "horarioDAW"){
-                mostrarHorario($horario);
+        $horarioTipo = $_POST["horarioTipo"];
+        // print_r($horarioTipo);
+            for ($i = 0; $i<count($horarioTipo); $i++){
+                if($horarioTipo[$i] == "horarioDAW"){
+                    echo "<h2>Horario 2º DAW_M</h2>";
+                    mostrarHorario($horario);
+                }
+                if ($horarioTipo[$i] == "horarioDAM") {
+                    echo "<h2>Horario 2º DAM_M</h2>";
+                    mostrarHorarioDAM($horarioDAM);
+                }
+                if ($horarioTipo[$i] == "docente1") {
+                    echo "<h2>Horario Ermis Papakonstantinou Baez</h2>";
+                    mostrarHorarioDocente1($horarioDocente1);
+                }
+                if ($horarioTipo[$i] == "docente2") {
+                    echo "<h2>Horario Sergio Ramos Suarez</h2>";
+                    mostrarHorarioDocente2($horarioDocente2);
+                }
             }
-            if ($_POST["horarioTipo"] == "horarioDAM") {
-                mostrarHorarioDAM($horarioDAM);
-            }
-        }
     ?>
 </body>
 </html>
